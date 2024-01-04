@@ -7,17 +7,13 @@ pipeline {
             }
         }
 
-        stage("Test"){
+        stage("Build Image"){
             steps{
-                sh 'sudo -S apt install npm'
-                sh 'npm test'
+                sh 'docker build -t my-node-app:1.0 .'
+                sh 'docker run -d -p 3000:3000 my-node-app:1.0'
             }
         }
 
-        stage('dev'){
-            steps{
-                sh "npm run dev"
-            }
-        }
+    
     }
 }
