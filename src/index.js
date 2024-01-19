@@ -4,7 +4,9 @@ const app = express();
 const PORT = 3000;
 
 app.get("/", (req, res) => {
-  res.send("Hello World! 2.0");
+  res.send(
+    "Automated Continuous Integration/Continuous Deployment (CI/CD) Pipeline for Software Development and Deployment Using jenkins and Docker  "
+  );
 });
 
 function Server() {
